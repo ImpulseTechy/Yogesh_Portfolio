@@ -64,7 +64,7 @@ const dotColor: Record<Dot, string> = {
 
 export default function Experience() {
   return (
-    <section id="about" className="px-6 py-20 md:px-12">
+    <section id="experience" className="px-6 py-20 md:px-12">
       <motion.div
         variants={staggerContainer}
         initial="hidden"

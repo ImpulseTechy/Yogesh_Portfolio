@@ -61,6 +61,44 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yogesh Bawane",
+  url: "https://yogeshbawane.in",
+  jobTitle: "Robotics Engineer & Hardware Educator",
+  worksFor: {
+    "@type": "Organization",
+    name: "Newton School of Technology",
+  },
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "BITS Pilani",
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Pune",
+    addressRegion: "Maharashtra",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/yogesh-bawane/",
+    "https://www.youtube.com/@ImpulseTech",
+    "https://github.com/ImpulseTechy",
+    "https://www.instagram.com/impulsetechy/",
+  ],
+  knowsAbout: [
+    "PCB Design",
+    "Embedded Systems",
+    "Robotics Education",
+    "VLSI Design",
+    "CubeSat",
+    "STEM Curriculum",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -70,8 +108,28 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
+      <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent-blue focus:px-4 focus:py-2 focus:text-[13px] focus:font-medium focus:text-white focus:shadow-lg"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

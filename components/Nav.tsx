@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  { href: "#tools", label: "Tools" },
   { href: "#research", label: "Research" },
   { href: "#teaching", label: "Teaching" },
   { href: "#contact", label: "Contact" },
@@ -24,8 +26,8 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-[#0A0C10]/80 transition-colors ${
-        scrolled ? "border-b border-white/5" : "border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-bg-primary/80 transition-colors ${
+        scrolled ? "border-b border-border" : "border-b border-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-12">
@@ -50,18 +52,21 @@ export default function Nav() {
           ))}
         </ul>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="text-text-secondary hover:text-text-primary md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="text-text-secondary hover:text-text-primary md:hidden"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
-        <div className="border-t border-white/5 bg-[#0A0C10]/95 md:hidden">
+        <div className="border-t border-border bg-bg-primary/95 md:hidden">
           <ul className="flex flex-col px-6 py-4">
             {links.map((l) => (
               <li key={l.href}>

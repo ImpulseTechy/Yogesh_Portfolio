@@ -72,7 +72,7 @@ export default function YouTube() {
 
           <motion.div variants={fadeUp}>
             <a
-              href="https://www.youtube.com/@impulsetechy"
+              href="https://www.youtube.com/@ImpulseTech"
               target="_blank"
               rel="noopener noreferrer"
               className="group block overflow-hidden rounded-xl border border-white/5 bg-bg-card transition-colors hover:border-white/10 hover:bg-bg-card-hover"

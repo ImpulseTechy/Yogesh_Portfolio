@@ -9,8 +9,14 @@ const links = [
   {
     icon: Mail,
     label: "Email",
-    value: "yogesh@yogeshbawane.in",
-    href: "mailto:yogesh@yogeshbawane.in",
+    value: "yogeshbawane219@gmail.com",
+    href: "mailto:yogeshbawane219@gmail.com",
+  },
+  {
+    icon: Mail,
+    label: "Email (ImpulseTech)",
+    value: "impulsetech101@gmail.com",
+    href: "mailto:impulsetech101@gmail.com",
   },
   {
     icon: Linkedin,
@@ -22,7 +28,7 @@ const links = [
     icon: Youtube,
     label: "YouTube",
     value: "ImpulseTech",
-    href: "https://www.youtube.com/@impulsetechy",
+    href: "https://www.youtube.com/@ImpulseTech",
   },
   {
     icon: Github,
