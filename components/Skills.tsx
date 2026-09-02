@@ -6,42 +6,66 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 
 type Group = {
   title: string;
-  accent: "blue" | "teal" | "amber";
   items: string[];
 };
 
 const groups: Group[] = [
   {
-    title: "Hardware Design",
-    accent: "blue",
+    title: "Hardware",
     items: [
       "ESP32",
       "Raspberry Pi Pico",
-      "Arduino Nano 33 BLE",
+      "Arduino BLE",
       "Micro:bit",
-      "PCB Layout",
-      "Copper Pour",
       "2-layer Boards",
+      "Multi-layer PCBs",
+      "Soldering & Prototyping",
+      "Lab Instruments",
     ],
   },
   {
-    title: "PCB & EDA Tools",
-    accent: "amber",
-    items: ["EasyEDA", "KiCad", "Gerber Files", "Ferric Chloride Etching"],
+    title: "EDA",
+    items: [
+      "EasyEDA",
+      "KiCad",
+      "Gerber Generation",
+      "PCB Fabrication",
+      "Ferric Chloride Etching",
+    ],
   },
   {
-    title: "Embedded & Firmware",
-    accent: "teal",
-    items: ["MicroPython", "Arduino C++", "ROS 2 (Humble)", "RTOS Concepts"],
+    title: "Firmware",
+    items: [
+      "MicroPython",
+      "Arduino C++",
+      "ROS 2 (Humble)",
+      "RTOS Concepts",
+      "Web Serial API",
+      "ESP-IDF",
+    ],
   },
   {
-    title: "VLSI & Electronics (M.Tech)",
-    accent: "blue",
-    items: ["VLSI Design", "MOS Devices", "Analog IC Design", "CAD for VLSI"],
+    title: "VLSI",
+    items: [
+      "VLSI Design",
+      "MOS Devices",
+      "Analog IC Design",
+      "CAD flow",
+      "Verilog HDL",
+    ],
   },
   {
-    title: "Education & Curriculum",
-    accent: "teal",
+    title: "CAD",
+    items: [
+      "Autodesk Fusion 360",
+      "SolidWorks",
+      "3D Printing",
+      "Enclosure Design",
+      "3D Modeling",
+    ],
+  },
+  {
+    title: "Education",
     items: [
       "STEM Curriculum Design",
       "Workshop Facilitation",
@@ -50,28 +74,11 @@ const groups: Group[] = [
       "Competency-based Learning",
     ],
   },
-  {
-    title: "Platforms & Tools",
-    accent: "amber",
-    items: ["Python", "Git", "EasyEDA", "Notion", "Linux (Ubuntu)"],
-  },
 ];
-
-const pillByAccent: Record<Group["accent"], string> = {
-  blue: "border-accent-blue/20 bg-accent-blue-dim text-accent-blue-light",
-  teal: "border-accent-teal/20 bg-accent-teal-dim text-accent-teal-light",
-  amber: "border-accent-amber/20 bg-accent-amber-dim text-accent-amber-light",
-};
-
-const dotByAccent: Record<Group["accent"], string> = {
-  blue: "bg-accent-blue",
-  teal: "bg-accent-teal-light",
-  amber: "bg-accent-amber-light",
-};
 
 export default function Skills() {
   return (
-    <section className="px-6 py-20 md:px-12">
+    <section id="skills" className="px-6 py-20 md:px-12">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -80,29 +87,27 @@ export default function Skills() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
+          index="08"
           label="Skills"
           title="Toolbox"
           subtitle="Hardware, firmware, EDA, VLSI, and curriculum design — the stack behind every product and program."
         />
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {groups.map((g) => (
             <motion.div
               key={g.title}
               variants={fadeUp}
-              className="rounded-xl border border-white/5 bg-bg-card p-5"
+              className="rounded-xl border border-border bg-bg-card p-6 transition-colors duration-300 hover:border-border-accent"
             >
-              <div className="mb-3 flex items-center gap-2">
-                <span className={`h-1.5 w-1.5 rounded-full ${dotByAccent[g.accent]}`} />
-                <h3 className="font-heading text-[14px] text-text-primary">
-                  {g.title}
-                </h3>
-              </div>
+              <h3 className="font-mono text-[12px] uppercase tracking-wider text-accent-blue mb-4">
+                {g.title}
+              </h3>
               <ul className="flex flex-wrap gap-1.5">
                 {g.items.map((i) => (
                   <li
                     key={i}
-                    className={`rounded-md border px-2 py-0.5 text-[11px] ${pillByAccent[g.accent]}`}
+                    className="rounded-md border border-[#00D9A3]/15 bg-bg-primary/40 px-2.5 py-1 text-[11px] font-mono text-text-secondary hover:text-accent-teal hover:border-accent-teal/40 transition-all duration-200"
                   >
                     {i}
                   </li>

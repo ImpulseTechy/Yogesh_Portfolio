@@ -15,6 +15,7 @@ export default function About() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
+          index="01"
           label="About"
           title="Hardware, taught hands-on."
         />

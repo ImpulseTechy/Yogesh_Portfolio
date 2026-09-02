@@ -1,15 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FileText, Mail, BookOpen, ArrowUpRight, Radio } from "lucide-react";
+import { FileText, Mail, BookOpen, Radio } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import { fadeUp, staggerContainer } from "@/lib/motion";
-
-const venues = [
-  "IEEE INDISCON 2025",
-  "Journal of Engineering Education Transformations (JEET)",
-  "IAC 2027 (future target)",
-];
 
 const dataPoints = [
   "25-student workshop at IIIT Nagpur",
@@ -48,101 +42,81 @@ export default function Research() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
+          index="05"
           label="Research & Writing"
           title="Papers, articles, and field notes."
           subtitle="Turning workshop data into peer-reviewed research, and sharing builds through trade publications."
         />
 
+        {/* Paper 1: CubeSat */}
         <motion.article
           variants={fadeUp}
-          className="relative overflow-hidden rounded-xl border border-white/5 bg-bg-card p-6 md:p-8"
+          className="relative overflow-hidden rounded-xl border border-white/5 bg-bg-card p-6 md:p-8 border-l-2 border-accent-blue"
         >
-          <span
-            className="absolute inset-y-0 left-0 w-[3px] bg-accent-teal"
-            aria-hidden="true"
-          />
-
           <div className="flex items-start justify-between gap-4">
-            <div className="flex items-center gap-2 text-accent-teal-light">
+            <div className="flex items-center gap-2 text-accent-blue">
               <FileText size={16} />
-              <span className="label-caps !text-accent-teal-light">
+              <span className="font-mono text-[10px] uppercase tracking-wider font-semibold text-accent-blue">
                 Featured Paper
               </span>
             </div>
-            <span className="rounded-full border border-accent-amber/30 bg-accent-amber-dim px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-accent-amber-light">
+            <span className="rounded bg-[rgba(0,217,163,0.08)] border border-[rgba(0,217,163,0.15)] px-2 py-0.5 text-[9px] font-mono tracking-widest text-accent-teal uppercase">
               Manuscript In Prep
             </span>
           </div>
 
-          <h3 className="mt-4 font-heading text-2xl leading-snug text-text-primary md:text-3xl">
+          <h3 className="mt-4 font-heading text-2xl font-semibold leading-snug text-text-primary md:text-3xl">
             CubeSat Education Kit as a Pedagogical Tool: Workshop Outcomes and
             Learning Framework
           </h3>
 
-          <div className="mt-7 grid grid-cols-1 gap-7 md:grid-cols-2">
-            <div>
-              <div className="label-caps mb-3">Target Venues</div>
-              <ul className="space-y-1.5">
-                {venues.map((v) => (
-                  <li
-                    key={v}
-                    className="flex items-start gap-2 text-[13px] text-text-secondary"
-                  >
-                    <span className="mt-1.5 inline-block h-1 w-1 flex-none rounded-full bg-accent-teal-light" />
-                    {v}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-4 font-mono text-[11px] text-accent-blue tracking-wide">
+            Target Venues: <span className="font-semibold">→ IEEE INDISCON 2026 · JEET · IAC 2027</span>
+          </div>
 
-            <div>
-              <div className="label-caps mb-3">Key Data Points</div>
-              <ul className="space-y-1.5">
-                {dataPoints.map((d) => (
-                  <li
-                    key={d}
-                    className="flex items-start gap-2 text-[13px] text-text-secondary"
-                  >
-                    <span className="mt-1.5 inline-block h-1 w-1 flex-none rounded-full bg-accent-blue" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-6">
+            <div className="font-mono text-[11px] uppercase tracking-wider text-text-secondary mb-3">Key Data Points</div>
+            <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {dataPoints.map((d) => (
+                <li
+                  key={d}
+                  className="flex items-start gap-2 text-[13px] text-text-secondary"
+                >
+                  <span className="mt-1.5 inline-block h-1 w-1 flex-none rounded-full bg-accent-teal" />
+                  {d}
+                </li>
+              ))}
+            </ul>
           </div>
         </motion.article>
 
+        {/* Paper 2: Heartline */}
         <motion.article
           variants={fadeUp}
-          className="relative mt-4 overflow-hidden rounded-xl border border-border bg-bg-card p-6 md:p-8"
+          className="relative mt-6 overflow-hidden rounded-xl border border-white/5 bg-bg-card p-6 md:p-8 border-l-2 border-accent-blue"
         >
-          <span
-            className="absolute inset-y-0 left-0 w-[3px] bg-accent-blue"
-            aria-hidden="true"
-          />
-
           <div className="flex items-start justify-between gap-4">
-            <div className="flex items-center gap-2 text-accent-blue-light">
+            <div className="flex items-center gap-2 text-accent-blue">
               <Radio size={16} />
-              <span className="label-caps !text-accent-blue-light">
+              <span className="font-mono text-[10px] uppercase tracking-wider font-semibold text-accent-blue">
                 IoT Systems Paper
               </span>
             </div>
-            <span className="rounded-full border border-accent-amber/30 bg-accent-amber-dim px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-accent-amber-light">
+            <span className="rounded bg-[rgba(74,158,255,0.08)] border border-[rgba(74,158,255,0.15)] px-2 py-0.5 text-[9px] font-mono tracking-widest text-accent-blue uppercase">
               Submitted · IEEE
             </span>
           </div>
 
-          <h3 className="mt-4 font-heading text-2xl leading-snug text-text-primary md:text-3xl">
+          <h3 className="mt-4 font-heading text-2xl font-semibold leading-snug text-text-primary md:text-3xl">
             Heartline: An Open-Source, Gesture-Based IoT Interface for
             Expressive Emotional Communication via MQTT
           </h3>
 
-          <div className="mt-2 text-[12px] text-text-secondary">
+          <div className="mt-2 font-mono text-[11px] text-text-secondary">
             Yogesh Bawane, Hemant Yadav · Newton School of Technology, Pune
           </div>
 
-          <p className="mt-5 text-[13px] leading-[1.7] text-text-secondary">
+          <p className="mt-4 text-[13px] leading-[1.7] text-text-secondary">
             An open-source IoT system for multi-modal emotional communication
             between two physically-separated users — no smartphone required.
             ESP32 nodes exchange gesture-mapped byte codes over MQTT to trigger
@@ -150,9 +124,20 @@ export default function Research() {
             paired device.
           </p>
 
-          <div className="mt-7 grid grid-cols-1 gap-7 md:grid-cols-2">
+          {/* Key Metrics Teal Row */}
+          <div className="mt-5 border-y border-white/5 py-3 font-mono text-[11px] text-accent-teal flex flex-wrap gap-x-4 gap-y-1">
+            <div><span className="text-text-secondary">Latency:</span> 142 ms avg latency</div>
+            <div className="text-white/10 hidden sm:block">·</div>
+            <div><span className="text-text-secondary">Evaluation:</span> 50 cycles</div>
+            <div className="text-white/10 hidden sm:block">·</div>
+            <div><span className="text-text-secondary">Code:</span> Public Domain</div>
+            <div className="text-white/10 hidden sm:block">·</div>
+            <div><span className="text-text-secondary">Hardware:</span> Open Source</div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 pt-2">
             <div>
-              <div className="label-caps mb-3">Stack</div>
+              <div className="font-mono text-[11px] uppercase tracking-wider text-text-secondary mb-2">Stack</div>
               <ul className="space-y-1.5">
                 {[
                   "ESP32 microcontrollers",
@@ -164,53 +149,30 @@ export default function Research() {
                     key={d}
                     className="flex items-start gap-2 text-[13px] text-text-secondary"
                   >
-                    <span className="mt-1.5 inline-block h-1 w-1 flex-none rounded-full bg-accent-blue-light" />
+                    <span className="mt-1.5 inline-block h-1 w-1 flex-none rounded-full bg-accent-blue" />
                     {d}
                   </li>
                 ))}
               </ul>
             </div>
-
-            <div>
-              <div className="label-caps mb-3">Results &amp; Release</div>
-              <ul className="space-y-1.5">
-                {[
-                  "50 evaluation cycles · avg. 142 ms latency",
-                  "Source code released to public domain",
-                  "Gerber files and EasyEDA schematic open-sourced",
-                  "Live demo available",
-                ].map((d) => (
-                  <li
-                    key={d}
-                    className="flex items-start gap-2 text-[13px] text-text-secondary"
-                  >
-                    <span className="mt-1.5 inline-block h-1 w-1 flex-none rounded-full bg-accent-teal-light" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
+            
+            <div className="flex items-end">
+              <a
+                href="https://drive.google.com/file/d/14XOSMFsjLj3ZSvEbdyipnzXc8w_U_-ct/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-2 rounded-md border border-[rgba(74,158,255,0.2)] bg-[rgba(74,158,255,0.03)] px-5 py-2.5 text-[12px] font-mono font-medium text-accent-blue hover:bg-[rgba(74,158,255,0.08)] hover:border-[rgba(74,158,255,0.4)] transition-all w-full sm:w-auto"
+              >
+                View Manuscript (PDF)
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
             </div>
-          </div>
-
-          <div className="mt-6">
-            <a
-              href="https://drive.google.com/file/d/14XOSMFsjLj3ZSvEbdyipnzXc8w_U_-ct/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-md border border-border bg-white/[0.02] px-4 py-2 text-[13px] text-text-primary transition-colors hover:border-border-accent hover:bg-bg-card-hover"
-            >
-              <FileText size={14} className="text-accent-blue-light" />
-              View Manuscript (PDF)
-              <ArrowUpRight
-                size={14}
-                className="text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-accent-blue-light"
-              />
-            </a>
           </div>
         </motion.article>
 
-        <motion.div variants={fadeUp} className="mt-10">
-          <div className="label-caps mb-4">Published Articles</div>
+        {/* Published Articles */}
+        <motion.div variants={fadeUp} className="mt-12">
+          <div className="font-mono text-[11px] uppercase tracking-wider text-text-secondary mb-4">Published Articles</div>
           <ul className="space-y-3">
             {publications.map((p) => (
               <li key={p.title}>
@@ -218,26 +180,26 @@ export default function Research() {
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-xl border border-border bg-bg-card p-5 transition-colors hover:border-border-accent hover:bg-bg-card-hover"
+                  className="group block rounded-xl border border-white/5 bg-bg-card p-5 hover:border-[rgba(74,158,255,0.25)] hover:bg-bg-card-hover transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-start gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-blue-dim text-accent-blue-light">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[rgba(74,158,255,0.06)] border border-[rgba(74,158,255,0.15)] text-accent-blue">
                         <BookOpen size={16} />
                       </div>
                       <div>
-                        <h4 className="font-heading text-[15px] leading-snug text-text-primary md:text-[16px]">
+                        <h4 className="font-heading text-[15px] font-semibold leading-snug text-text-primary md:text-[16px]">
                           {p.title}
                         </h4>
-                        <div className="mt-1 text-[12px] text-accent-blue-light">
+                        <div className="mt-1 font-mono text-[11px] text-accent-blue">
                           {p.venue}
-                          <span className="text-text-muted"> · {p.issue}</span>
+                          <span className="text-text-secondary"> · {p.issue}</span>
                         </div>
                         <div className="mt-3 flex flex-wrap gap-1.5">
                           {p.tags.map((t) => (
                             <span
                               key={t}
-                              className="rounded-md border border-border bg-white/[0.02] px-2 py-0.5 text-[11px] text-text-secondary"
+                              className="rounded bg-white/[0.02] border border-white/5 px-2 py-0.5 text-[10px] text-text-secondary font-mono"
                             >
                               {t}
                             </span>
@@ -245,10 +207,7 @@ export default function Research() {
                         </div>
                       </div>
                     </div>
-                    <ArrowUpRight
-                      size={16}
-                      className="shrink-0 text-text-muted transition-colors group-hover:text-accent-blue-light"
-                    />
+                    <span className="text-text-secondary font-mono text-sm transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
                   </div>
                 </a>
               </li>
@@ -258,13 +217,13 @@ export default function Research() {
 
         <motion.p
           variants={fadeUp}
-          className="mt-6 flex flex-wrap items-center gap-2 text-[13px] text-text-secondary"
+          className="mt-8 flex flex-wrap items-center gap-2 text-[13px] text-text-secondary"
         >
-          <Mail size={14} className="text-text-muted" />
+          <Mail size={14} className="text-text-secondary" />
           Interested in collaborating on space education research?
           <a
             href="mailto:yogeshbawane219@gmail.com"
-            className="text-accent-blue-light underline-offset-2 hover:underline"
+            className="text-accent-blue hover:text-accent-teal transition-colors underline underline-offset-2"
           >
             Get in touch.
           </a>
@@ -273,3 +232,4 @@ export default function Research() {
     </section>
   );
 }
+

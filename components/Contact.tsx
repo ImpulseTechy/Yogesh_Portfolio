@@ -55,6 +55,7 @@ export default function Contact() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
+          index="09"
           label="Contact"
           title="Let's build something."
           subtitle="Open to research collaborations, speaking at workshops, curriculum consulting, and hardware education projects."

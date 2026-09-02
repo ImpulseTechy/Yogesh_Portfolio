@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, MonitorSmartphone, Wrench, ArrowUpRight } from "lucide-react";
+import { Terminal, MonitorSmartphone, Wrench, ArrowUpRight, Cpu } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
@@ -48,6 +48,16 @@ const tools: Tool[] = [
     href: "https://www.desifoundertools.in/",
     tags: ["Founders", "Web App", "India"],
   },
+  {
+    title: "MicroLab",
+    icon: <Cpu size={18} />,
+    accent: "blue",
+    description:
+      "An IDE for the Raspberry Pi Pico to program in MicroPython directly from your browser.",
+    domain: "getmicrolab.com",
+    href: "https://www.getmicrolab.com/",
+    tags: ["Raspberry Pi Pico", "MicroPython", "IDE"],
+  },
 ];
 
 const accentMap: Record<
@@ -82,6 +92,7 @@ export default function Tools() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
+          index="03"
           label="Tools I've Built"
           title="Software for hardware folks."
           subtitle="Small, focused web tools I built to scratch my own itch while teaching and building hardware."

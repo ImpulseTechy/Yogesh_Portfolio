@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -128,6 +129,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <ScrollReveal />
         {children}
       </body>
     </html>
