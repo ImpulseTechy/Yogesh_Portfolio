@@ -138,7 +138,7 @@ export default function Tools() {
                   {t.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-md border border-border bg-white/[0.02] px-2 py-0.5 text-[11px] text-text-secondary"
+                      className="rounded-md border border-border bg-fg/[0.02] px-2 py-0.5 text-[11px] text-text-secondary"
                     >
                       {tag}
                     </span>

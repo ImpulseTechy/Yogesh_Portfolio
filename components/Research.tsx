@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FileText, Mail, BookOpen, Radio } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { mailto, useEmail } from "@/lib/useEmail";
 
 const dataPoints = [
   "25-student workshop at IIIT Nagpur",
@@ -32,6 +33,7 @@ const publications: Publication[] = [
 ];
 
 export default function Research() {
+  const email = useEmail();
   return (
     <section id="research" className="px-6 py-20 md:px-12">
       <motion.div
@@ -51,7 +53,7 @@ export default function Research() {
         {/* Paper 1: CubeSat */}
         <motion.article
           variants={fadeUp}
-          className="relative overflow-hidden rounded-xl border border-white/5 bg-bg-card p-6 md:p-8 border-l-2 border-accent-blue"
+          className="relative overflow-hidden rounded-xl border border-fg/5 bg-bg-card p-6 md:p-8 border-l-2 border-accent-blue"
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-center gap-2 text-accent-blue">
@@ -93,7 +95,7 @@ export default function Research() {
         {/* Paper 2: Heartline */}
         <motion.article
           variants={fadeUp}
-          className="relative mt-6 overflow-hidden rounded-xl border border-white/5 bg-bg-card p-6 md:p-8 border-l-2 border-accent-blue"
+          className="relative mt-6 overflow-hidden rounded-xl border border-fg/5 bg-bg-card p-6 md:p-8 border-l-2 border-accent-blue"
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-center gap-2 text-accent-blue">
@@ -125,13 +127,13 @@ export default function Research() {
           </p>
 
           {/* Key Metrics Teal Row */}
-          <div className="mt-5 border-y border-white/5 py-3 font-mono text-[11px] text-accent-teal flex flex-wrap gap-x-4 gap-y-1">
+          <div className="mt-5 border-y border-fg/5 py-3 font-mono text-[11px] text-accent-teal flex flex-wrap gap-x-4 gap-y-1">
             <div><span className="text-text-secondary">Latency:</span> 142 ms avg latency</div>
-            <div className="text-white/10 hidden sm:block">·</div>
+            <div className="text-fg/10 hidden sm:block">·</div>
             <div><span className="text-text-secondary">Evaluation:</span> 50 cycles</div>
-            <div className="text-white/10 hidden sm:block">·</div>
+            <div className="text-fg/10 hidden sm:block">·</div>
             <div><span className="text-text-secondary">Code:</span> Public Domain</div>
-            <div className="text-white/10 hidden sm:block">·</div>
+            <div className="text-fg/10 hidden sm:block">·</div>
             <div><span className="text-text-secondary">Hardware:</span> Open Source</div>
           </div>
 
@@ -180,7 +182,7 @@ export default function Research() {
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-xl border border-white/5 bg-bg-card p-5 hover:border-[rgba(74,158,255,0.25)] hover:bg-bg-card-hover transition-all"
+                  className="group block rounded-xl border border-fg/5 bg-bg-card p-5 hover:border-[rgba(74,158,255,0.25)] hover:bg-bg-card-hover transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-start gap-3">
@@ -199,7 +201,7 @@ export default function Research() {
                           {p.tags.map((t) => (
                             <span
                               key={t}
-                              className="rounded bg-white/[0.02] border border-white/5 px-2 py-0.5 text-[10px] text-text-secondary font-mono"
+                              className="rounded bg-fg/[0.02] border border-fg/5 px-2 py-0.5 text-[10px] text-text-secondary font-mono"
                             >
                               {t}
                             </span>
@@ -222,7 +224,7 @@ export default function Research() {
           <Mail size={14} className="text-text-secondary" />
           Interested in collaborating on space education research?
           <a
-            href="mailto:yogeshbawane219@gmail.com"
+            href={mailto(email, "Research collaboration") ?? "#contact"}
             className="text-accent-blue hover:text-accent-teal transition-colors underline underline-offset-2"
           >
             Get in touch.

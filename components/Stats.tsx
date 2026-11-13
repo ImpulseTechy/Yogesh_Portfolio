@@ -29,7 +29,7 @@ export default function Stats() {
           <motion.div
             key={s.label}
             variants={fadeUp}
-            className="rounded-xl border border-white/5 bg-bg-card p-5"
+            className="rounded-xl border border-fg/5 bg-bg-card p-5"
           >
             <div className="font-mono text-[28px] font-semibold text-accent-teal leading-tight">
               {s.value}

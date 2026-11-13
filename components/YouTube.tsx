@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Youtube, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import LiteYouTube from "./LiteYouTube";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { site } from "@/lib/site";
+
+const [featured, ...rest] = site.youtube.videos;
 
 const focusAreas = [
   "Electronics fundamentals",
@@ -71,7 +75,7 @@ export default function YouTube() {
 
             <div className="pt-2">
               <a
-                href="https://www.youtube.com/@ImpulseTech"
+                href={site.youtube.channelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-accent-teal/20 bg-accent-teal-dim px-4 py-2.5 text-[12px] font-mono text-accent-teal-light hover:bg-accent-teal-dim/80 hover:border-accent-teal/40 transition-all duration-200"
@@ -82,17 +86,19 @@ export default function YouTube() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="w-full">
-            <div className="aspect-video w-full overflow-hidden rounded-xl border border-accent-teal/20 bg-bg-card shadow-[0_0_20px_rgba(0,217,163,0.04)] transition-all duration-300 hover:border-accent-teal/40 hover:shadow-[0_0_25px_rgba(0,217,163,0.08)]">
-              <iframe
-                src="https://www.youtube.com/embed/2TzM16c5T7g"
-                title="ImpulseTech Featured Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="h-full w-full border-0"
-              />
-            </div>
+            <LiteYouTube id={featured.id} title={featured.title} />
+            <p className="mt-3 text-[13px] text-text-secondary">{featured.title}</p>
           </motion.div>
         </div>
+
+        <motion.ul variants={fadeUp} className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {rest.map((v) => (
+            <li key={v.id}>
+              <LiteYouTube id={v.id} title={v.title} />
+              <p className="mt-3 text-[13px] leading-snug text-text-secondary">{v.title}</p>
+            </li>
+          ))}
+        </motion.ul>
       </motion.div>
     </section>
   );

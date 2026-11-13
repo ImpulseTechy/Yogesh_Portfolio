@@ -2,27 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Colours are space-separated RGB triplets so Tailwind opacity modifiers (e.g. bg-bg-card/40) work. */
 :root {
-  --bg-primary: #0A0E1A;
-  --bg-secondary: #0F1528;
-  --bg-card: #131929;
-  --bg-card-hover: #182035;
+  color-scheme: dark;
+  --bg-primary: 10 14 26;
+  --bg-secondary: 15 21 40;
+  --bg-card: 19 25 41;
+  --bg-card-hover: 24 32 53;
+  --fg: 255 255 255;
   --border: rgba(0, 217, 163, 0.12);
   --border-accent: rgba(0, 217, 163, 0.35);
-  --text-primary: #E8EDF5;
-  --text-secondary: #7A8BAA;
+  --text-primary: 232 237 245;
+  --text-secondary: 122 139 170;
   --text-muted: rgba(122, 139, 170, 0.6);
-  --accent-blue: #4A9EFF;
-  --accent-blue-light: #4A9EFF;
+  --accent-blue: 74 158 255;
+  --accent-blue-light: 74 158 255;
   --accent-blue-dim: rgba(74, 158, 255, 0.12);
-  --accent-teal: #00D9A3;
-  --accent-teal-light: #00D9A3;
+  --accent-teal: 0 217 163;
+  --accent-teal-light: 0 217 163;
   --accent-teal-dim: rgba(0, 217, 163, 0.12);
-  --accent-amber: #BA7517;
-  --accent-amber-light: #FAC775;
+  --accent-amber: 186 117 23;
+  --accent-amber-light: 250 199 117;
   --accent-amber-dim: rgba(186, 117, 23, 0.12);
+  --nav-bg: rgba(10, 14, 26, 0.85);
+  --nav-bg-solid: rgba(10, 14, 26, 0.95);
+  --shadow: rgba(10, 14, 26, 0.4);
+  --star: rgba(232, 237, 245, 0.35);
   --scrollbar-thumb: rgba(0, 217, 163, 0.1);
   --scrollbar-thumb-hover: rgba(0, 217, 163, 0.2);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-primary: 246 248 251;
+  --bg-secondary: 238 242 247;
+  --bg-card: 255 255 255;
+  --bg-card-hover: 243 246 250;
+  --fg: 15 23 42;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-accent: rgba(0, 140, 105, 0.4);
+  --text-primary: 15 23 42;
+  --text-secondary: 71 85 105;
+  --text-muted: rgba(71, 85, 105, 0.75);
+  --accent-blue: 37 99 235;
+  --accent-blue-light: 37 99 235;
+  --accent-blue-dim: rgba(37, 99, 235, 0.1);
+  --accent-teal: 0 140 105;
+  --accent-teal-light: 0 125 94;
+  --accent-teal-dim: rgba(0, 140, 105, 0.1);
+  --accent-amber: 180 83 9;
+  --accent-amber-light: 180 83 9;
+  --accent-amber-dim: rgba(180, 83, 9, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg-solid: rgba(255, 255, 255, 0.97);
+  --shadow: rgba(15, 23, 42, 0.08);
+  --star: transparent;
+  --scrollbar-thumb: rgba(15, 23, 42, 0.15);
+  --scrollbar-thumb-hover: rgba(15, 23, 42, 0.25);
 }
 
 * {
@@ -34,8 +70,8 @@ html {
 }
 
 body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: rgb(var(--bg-primary));
+  color: rgb(var(--text-primary));
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 14px;
   line-height: 1.7;
@@ -58,86 +94,86 @@ body::before {
   pointer-events: none;
   z-index: 0;
   box-shadow:
-    10vw 8vh 1px rgba(232, 237, 245, 0.28),
-    87vw 25vh 1px rgba(232, 237, 245, 0.38),
-    45vw 12vh 1px rgba(232, 237, 245, 0.32),
-    22vw 67vh 1px rgba(232, 237, 245, 0.42),
-    68vw 42vh 1px rgba(232, 237, 245, 0.28),
-    9vw 90vh 1px rgba(232, 237, 245, 0.38),
-    34vw 53vh 1px rgba(232, 237, 245, 0.32),
-    78vw 81vh 1px rgba(232, 237, 245, 0.45),
-    53vw 3vh 1px rgba(232, 237, 245, 0.28),
-    95vw 62vh 1px rgba(232, 237, 245, 0.42),
-    15vw 31vh 1px rgba(232, 237, 245, 0.32),
-    82vw 74vh 1px rgba(232, 237, 245, 0.38),
-    60vw 18vh 1px rgba(232, 237, 245, 0.28),
-    29vw 88vh 1px rgba(232, 237, 245, 0.42),
-    40vw 71vh 1px rgba(232, 237, 245, 0.32),
-    72vw 10vh 1px rgba(232, 237, 245, 0.45),
-    25vw 22vh 1px rgba(232, 237, 245, 0.28),
-    88vw 50vh 1px rgba(232, 237, 245, 0.42),
-    4vw 46vh 1px rgba(232, 237, 245, 0.32),
-    91vw 95vh 1px rgba(232, 237, 245, 0.38),
-    63vw 84vh 1px rgba(232, 237, 245, 0.28),
-    37vw 38vh 1px rgba(232, 237, 245, 0.42),
-    50vw 92vh 1px rgba(232, 237, 245, 0.32),
-    80vw 35vh 1px rgba(232, 237, 245, 0.45),
-    18vw 58vh 1px rgba(232, 237, 245, 0.28),
-    70vw 61vh 1px rgba(232, 237, 245, 0.42),
-    47vw 29vh 1px rgba(232, 237, 245, 0.32),
-    84vw 14vh 1px rgba(232, 237, 245, 0.38),
-    13vw 79vh 1px rgba(232, 237, 245, 0.28),
-    75vw 90vh 1px rgba(232, 237, 245, 0.42),
-    31vw 15vh 1px rgba(232, 237, 245, 0.32),
-    93vw 40vh 1px rgba(232, 237, 245, 0.45),
-    56vw 55vh 1px rgba(232, 237, 245, 0.28),
-    2vw 19vh 1px rgba(232, 237, 245, 0.42),
-    42vw 82vh 1px rgba(232, 237, 245, 0.32),
-    66vw 7vh 1px rgba(232, 237, 245, 0.38),
-    85vw 87vh 1px rgba(232, 237, 245, 0.28),
-    20vw 4vh 1px rgba(232, 237, 245, 0.42),
-    59vw 73vh 1px rgba(232, 237, 245, 0.32),
-    8vw 72vh 1px rgba(232, 237, 245, 0.45),
-    74vw 53vh 1px rgba(232, 237, 245, 0.28),
-    98vw 8vh 1px rgba(232, 237, 245, 0.42),
-    35vw 97vh 1px rgba(232, 237, 245, 0.32),
-    81vw 48vh 1px rgba(232, 237, 245, 0.38),
-    49vw 65vh 1px rgba(232, 237, 245, 0.28),
-    11vw 37vh 1px rgba(232, 237, 245, 0.42),
-    62vw 45vh 1px rgba(232, 237, 245, 0.32),
-    27vw 5vh 1px rgba(232, 237, 245, 0.45),
-    71vw 28vh 1px rgba(232, 237, 245, 0.28),
-    94vw 83vh 1px rgba(232, 237, 245, 0.42),
-    3vw 93vh 1px rgba(232, 237, 245, 0.32),
-    90vw 5vh 1px rgba(232, 237, 245, 0.38),
-    51vw 39vh 1px rgba(232, 237, 245, 0.28),
-    79vw 69vh 1px rgba(232, 237, 245, 0.42),
-    16vw 56vh 1px rgba(232, 237, 245, 0.32),
-    83vw 96vh 1px rgba(232, 237, 245, 0.45),
-    57vw 11vh 1px rgba(232, 237, 245, 0.28),
-    30vw 30vh 1px rgba(232, 237, 245, 0.42),
-    43vw 22vh 1px rgba(232, 237, 245, 0.32),
-    73vw 91vh 1px rgba(232, 237, 245, 0.38),
-    24vw 85vh 1px rgba(232, 237, 245, 0.28),
-    86vw 57vh 1px rgba(232, 237, 245, 0.42),
-    6vw 59vh 1px rgba(232, 237, 245, 0.32),
-    92vw 33vh 1px rgba(232, 237, 245, 0.45),
-    64vw 76vh 1px rgba(232, 237, 245, 0.28),
-    38vw 80vh 1px rgba(232, 237, 245, 0.42),
-    52vw 49vh 1px rgba(232, 237, 245, 0.32),
-    77vw 17vh 1px rgba(232, 237, 245, 0.38),
-    19vw 16vh 1px rgba(232, 237, 245, 0.28),
-    69vw 94vh 1px rgba(232, 237, 245, 0.42),
-    48vw 87vh 1px rgba(232, 237, 245, 0.32),
-    89vw 70vh 1px rgba(232, 237, 245, 0.45),
-    14vw 2vh 1px rgba(232, 237, 245, 0.28),
-    76vw 60vh 1px rgba(232, 237, 245, 0.42),
-    32vw 61vh 1px rgba(232, 237, 245, 0.32),
-    96vw 20vh 1px rgba(232, 237, 245, 0.38),
-    55vw 26vh 1px rgba(232, 237, 245, 0.28),
-    1vw 33vh 1px rgba(232, 237, 245, 0.42),
-    41vw 4vh 1px rgba(232, 237, 245, 0.32),
-    67vw 64vh 1px rgba(232, 237, 245, 0.45);
+    10vw 8vh 1px var(--star),
+    87vw 25vh 1px var(--star),
+    45vw 12vh 1px var(--star),
+    22vw 67vh 1px var(--star),
+    68vw 42vh 1px var(--star),
+    9vw 90vh 1px var(--star),
+    34vw 53vh 1px var(--star),
+    78vw 81vh 1px var(--star),
+    53vw 3vh 1px var(--star),
+    95vw 62vh 1px var(--star),
+    15vw 31vh 1px var(--star),
+    82vw 74vh 1px var(--star),
+    60vw 18vh 1px var(--star),
+    29vw 88vh 1px var(--star),
+    40vw 71vh 1px var(--star),
+    72vw 10vh 1px var(--star),
+    25vw 22vh 1px var(--star),
+    88vw 50vh 1px var(--star),
+    4vw 46vh 1px var(--star),
+    91vw 95vh 1px var(--star),
+    63vw 84vh 1px var(--star),
+    37vw 38vh 1px var(--star),
+    50vw 92vh 1px var(--star),
+    80vw 35vh 1px var(--star),
+    18vw 58vh 1px var(--star),
+    70vw 61vh 1px var(--star),
+    47vw 29vh 1px var(--star),
+    84vw 14vh 1px var(--star),
+    13vw 79vh 1px var(--star),
+    75vw 90vh 1px var(--star),
+    31vw 15vh 1px var(--star),
+    93vw 40vh 1px var(--star),
+    56vw 55vh 1px var(--star),
+    2vw 19vh 1px var(--star),
+    42vw 82vh 1px var(--star),
+    66vw 7vh 1px var(--star),
+    85vw 87vh 1px var(--star),
+    20vw 4vh 1px var(--star),
+    59vw 73vh 1px var(--star),
+    8vw 72vh 1px var(--star),
+    74vw 53vh 1px var(--star),
+    98vw 8vh 1px var(--star),
+    35vw 97vh 1px var(--star),
+    81vw 48vh 1px var(--star),
+    49vw 65vh 1px var(--star),
+    11vw 37vh 1px var(--star),
+    62vw 45vh 1px var(--star),
+    27vw 5vh 1px var(--star),
+    71vw 28vh 1px var(--star),
+    94vw 83vh 1px var(--star),
+    3vw 93vh 1px var(--star),
+    90vw 5vh 1px var(--star),
+    51vw 39vh 1px var(--star),
+    79vw 69vh 1px var(--star),
+    16vw 56vh 1px var(--star),
+    83vw 96vh 1px var(--star),
+    57vw 11vh 1px var(--star),
+    30vw 30vh 1px var(--star),
+    43vw 22vh 1px var(--star),
+    73vw 91vh 1px var(--star),
+    24vw 85vh 1px var(--star),
+    86vw 57vh 1px var(--star),
+    6vw 59vh 1px var(--star),
+    92vw 33vh 1px var(--star),
+    64vw 76vh 1px var(--star),
+    38vw 80vh 1px var(--star),
+    52vw 49vh 1px var(--star),
+    77vw 17vh 1px var(--star),
+    19vw 16vh 1px var(--star),
+    69vw 94vh 1px var(--star),
+    48vw 87vh 1px var(--star),
+    89vw 70vh 1px var(--star),
+    14vw 2vh 1px var(--star),
+    76vw 60vh 1px var(--star),
+    32vw 61vh 1px var(--star),
+    96vw 20vh 1px var(--star),
+    55vw 26vh 1px var(--star),
+    1vw 33vh 1px var(--star),
+    41vw 4vh 1px var(--star),
+    67vw 64vh 1px var(--star);
 }
 
 h1,
@@ -153,8 +189,8 @@ h6 {
 }
 
 ::selection {
-  background: rgba(0, 217, 163, 0.2);
-  color: #E8EDF5;
+  background: rgb(var(--accent-teal) / 0.2);
+  color: rgb(var(--text-primary));
 }
 
 .label-caps {
@@ -202,13 +238,13 @@ h6 {
   align-items: center;
   margin-left: 0.25rem;
   font-size: 0.85em;
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
   transition: transform 0.15s ease;
 }
 
 a:hover .ext-link-icon {
   transform: translate(1px, -1px);
-  color: var(--accent-teal);
+  color: rgb(var(--accent-teal));
 }
 
 /* Subtle scrollbar */
@@ -217,7 +253,7 @@ a:hover .ext-link-icon {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: rgb(var(--bg-primary));
 }
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);

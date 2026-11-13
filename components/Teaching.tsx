@@ -28,6 +28,13 @@ const workshops: Entry[] = [
     note: "19-slide workshop, hands-on fabrication",
   },
   {
+    title: "Drone Workshop — Build with ESP32",
+    org: "St. Mary's University, Hyderabad",
+    meta: "Hands-on drone build",
+    note: "Watch the behind-the-scenes video",
+    href: "https://www.youtube.com/watch?v=gq20tTu1le0",
+  },
+  {
     title: "CubeSat Education Workshop",
     org: "IIIT Nagpur",
     meta: "25 students · Space systems overview",

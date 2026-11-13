@@ -93,29 +93,21 @@ export default function Skills() {
           subtitle="Hardware, firmware, EDA, VLSI, and curriculum design — the stack behind every product and program."
         />
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <motion.dl
+          variants={fadeUp}
+          className="divide-y divide-border rounded-xl border border-border bg-bg-card"
+        >
           {groups.map((g) => (
-            <motion.div
-              key={g.title}
-              variants={fadeUp}
-              className="rounded-xl border border-border bg-bg-card p-6 transition-colors duration-300 hover:border-border-accent"
-            >
-              <h3 className="font-mono text-[12px] uppercase tracking-wider text-accent-blue mb-4">
+            <div key={g.title} className="grid grid-cols-1 gap-1 px-5 py-4 sm:grid-cols-[120px_1fr] sm:gap-6">
+              <dt className="font-mono text-[11px] uppercase tracking-wider text-accent-blue">
                 {g.title}
-              </h3>
-              <ul className="flex flex-wrap gap-1.5">
-                {g.items.map((i) => (
-                  <li
-                    key={i}
-                    className="rounded-md border border-[#00D9A3]/15 bg-bg-primary/40 px-2.5 py-1 text-[11px] font-mono text-text-secondary hover:text-accent-teal hover:border-accent-teal/40 transition-all duration-200"
-                  >
-                    {i}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              </dt>
+              <dd className="text-[13px] leading-[1.7] text-text-secondary">
+                {g.items.join(" · ")}
+              </dd>
+            </div>
           ))}
-        </div>
+        </motion.dl>
       </motion.div>
     </section>
   );

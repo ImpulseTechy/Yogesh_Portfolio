@@ -1,18 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, FileText, Mail } from "lucide-react";
 import PCBTraces from "./PCBTraces";
 import { fadeUp, staggerContainer } from "@/lib/motion";
-import dynamic from "next/dynamic";
-import { SolderingSkeleton } from "./SolderingScene";
-
-const SolderingScene = dynamic(() => import("./SolderingScene"), {
-  ssr: false,
-  loading: () => <SolderingSkeleton />,
-});
+import { site } from "@/lib/site";
+import { mailto, useEmail } from "@/lib/useEmail";
 
 export default function Hero() {
+  const email = useEmail();
   return (
     <section
       id="top"
@@ -24,10 +20,9 @@ export default function Hero() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+        className="relative z-10 mx-auto w-full max-w-6xl"
       >
-        {/* Left Column - Copy & Call-to-actions */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="max-w-3xl space-y-6">
           <motion.div variants={fadeUp}>
             <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(0,217,163,0.3)] bg-[rgba(0,217,163,0.1)] px-3 py-1 text-[11px] font-mono text-accent-teal">
               <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-accent-teal" />
@@ -68,7 +63,7 @@ export default function Hero() {
           {/* Personal Ethos Terminal Line */}
           <motion.div
             variants={fadeUp}
-            className="font-mono text-[12px] text-[rgba(0,217,163,0.5)] tracking-[0.05em]"
+            className="font-mono text-[12px] text-accent-teal/70 tracking-[0.05em]"
           >
             Explore: Electronics  ·  Learn: Coding  ·  Innovate: Hardware
           </motion.div>
@@ -85,21 +80,25 @@ export default function Hero() {
               />
             </a>
             <a
-              href="#research"
-              className="inline-flex items-center gap-2 rounded-md border border-white/10 px-5 py-2.5 text-[13px] text-text-primary transition-colors hover:border-white/20 hover:bg-white/[0.03]"
+              href={mailto(email, "Workshop invitation") ?? "#contact"}
+              className="inline-flex items-center gap-2 rounded-md border border-fg/10 px-5 py-2.5 text-[13px] text-text-primary transition-colors hover:border-fg/20 hover:bg-fg/[0.03]"
             >
-              Read Research
+              <Mail size={14} />
+              Invite me for a workshop
             </a>
+            {site.resumeUrl && (
+              <a
+                href={site.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-fg/10 px-5 py-2.5 text-[13px] text-text-primary transition-colors hover:border-fg/20 hover:bg-fg/[0.03]"
+              >
+                <FileText size={14} />
+                Résumé
+              </a>
+            )}
           </motion.div>
         </div>
-
-        {/* Right Column - 3D Interactive Canvas */}
-        <motion.div
-          variants={fadeUp}
-          className="lg:col-span-5 h-[380px] md:h-[480px] w-full flex items-center justify-center relative overflow-hidden rounded-xl border border-border bg-bg-secondary/40 backdrop-blur-[4px] shadow-[inset_0_0_20px_rgba(0,217,163,0.02),0_4px_30px_rgba(10,14,26,0.3)]"
-        >
-          <SolderingScene />
-        </motion.div>
       </motion.div>
 
       <motion.div

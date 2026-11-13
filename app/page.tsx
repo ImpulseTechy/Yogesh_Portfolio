@@ -9,6 +9,7 @@ import Research from "@/components/Research";
 import Teaching from "@/components/Teaching";
 import YouTube from "@/components/YouTube";
 import Skills from "@/components/Skills";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <Research />
       <Teaching />
       <YouTube />
+      <Testimonials />
       <Skills />
       <Contact />
       <Footer />

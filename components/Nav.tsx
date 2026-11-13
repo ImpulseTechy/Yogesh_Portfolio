@@ -58,7 +58,7 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4 md:py-6 transition-all duration-300">
       <div
-        className={`w-full max-w-5xl rounded-full border bg-[rgba(10,14,26,0.85)] backdrop-blur-[12px] px-6 py-2.5 flex items-center justify-between shadow-lg shadow-[#0A0E1A]/40 transition-all duration-300 ${
+        className={`w-full max-w-5xl rounded-full border bg-[var(--nav-bg)] backdrop-blur-[12px] px-6 py-2.5 flex items-center justify-between shadow-lg shadow-[var(--shadow)] transition-all duration-300 ${
           scrolled
             ? "border-[rgba(0,217,163,0.15)] shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
             : "border-[rgba(0,217,163,0.06)]"
@@ -105,7 +105,7 @@ export default function Nav() {
           <ThemeToggle />
           <button
             onClick={() => setOpen((v) => !v)}
-            className="text-text-secondary hover:text-text-primary md:hidden p-1 rounded-full hover:bg-white/[0.04]"
+            className="text-text-secondary hover:text-text-primary md:hidden p-1 rounded-full hover:bg-fg/[0.04]"
             aria-label="Toggle menu"
             aria-expanded={open}
           >
@@ -115,7 +115,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="absolute top-20 left-4 right-4 rounded-3xl border border-[rgba(0,217,163,0.15)] bg-[rgba(10,14,26,0.95)] backdrop-blur-[16px] shadow-2xl p-6 md:hidden">
+        <div className="absolute top-20 left-4 right-4 rounded-3xl border border-[rgba(0,217,163,0.15)] bg-[var(--nav-bg-solid)] backdrop-blur-[16px] shadow-2xl p-6 md:hidden">
           <ul className="flex flex-col gap-4">
             {links.map((l) => {
               const isActive = activeSection === l.id;
@@ -124,7 +124,7 @@ export default function Nav() {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className={`block py-2 text-sm font-mono tracking-wider transition-colors border-b border-white/[0.03] ${
+                    className={`block py-2 text-sm font-mono tracking-wider transition-colors border-b border-fg/[0.03] ${
                       isActive ? "text-accent-teal" : "text-text-secondary hover:text-text-primary"
                     }`}
                   >

@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
+import Image from "next/image";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { site } from "@/lib/site";
 
 export default function About() {
   return (
@@ -54,6 +56,17 @@ export default function About() {
           </div>
 
           <div className="space-y-4">
+            {site.profilePhoto && (
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border">
+                <Image
+                  src={site.profilePhoto}
+                  alt="Yogesh Bawane"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            )}
             <div className="rounded-xl border border-border bg-bg-card p-5">
               <div className="label-caps">Currently</div>
               <div className="mt-2 text-[13px] text-text-primary">
