@@ -60,10 +60,10 @@ export default function About() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border">
                 <Image
                   src={site.profilePhoto}
-                  alt="Yogesh Bawane"
+                  alt="Yogesh Bawane soldering a perfboard at his workbench"
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
+                  className="object-cover object-[55%_35%]"
                 />
               </div>
             )}

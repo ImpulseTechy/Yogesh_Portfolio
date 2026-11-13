@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import About from "@/components/About";
 import HardwarePortfolio from "@/components/HardwarePortfolio";
+import Book from "@/components/Book";
 import Tools from "@/components/Tools";
 import Experience from "@/components/Experience";
 import Research from "@/components/Research";
@@ -21,6 +22,7 @@ export default function Home() {
       <Stats />
       <About />
       <HardwarePortfolio />
+      <Book />
       <Tools />
       <Experience />
       <Research />

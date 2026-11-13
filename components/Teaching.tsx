@@ -148,7 +148,7 @@ export default function Teaching() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
-          index="06"
+          index="07"
           label="Teaching"
           title="Workshops & Curriculum"
           subtitle="Designing programs that translate hardware engineering into structured, age-appropriate learning."

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, FileText, Mail } from "lucide-react";
 import PCBTraces from "./PCBTraces";
+import CircuitBoard from "./CircuitBoard";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { site } from "@/lib/site";
 import { mailto, useEmail } from "@/lib/useEmail";
@@ -20,14 +21,21 @@ export default function Hero() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto w-full max-w-6xl"
+        className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-12"
       >
-        <div className="max-w-3xl space-y-6">
-          <motion.div variants={fadeUp}>
+        <div className="space-y-6 lg:col-span-7">
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(0,217,163,0.3)] bg-[rgba(0,217,163,0.1)] px-3 py-1 text-[11px] font-mono text-accent-teal">
               <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-accent-teal" />
               Open to collaborations
             </span>
+            <a
+              href="#book"
+              className="group inline-flex items-center gap-1.5 rounded-full border border-accent-amber/30 bg-accent-amber-dim px-3 py-1 text-[11px] font-mono text-accent-amber-light transition-colors hover:border-accent-amber/60"
+            >
+              New book: The Practical Electronics Playbook
+              <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+            </a>
           </motion.div>
 
           <motion.h1
@@ -99,6 +107,10 @@ export default function Hero() {
             )}
           </motion.div>
         </div>
+
+        <motion.div variants={fadeUp} className="mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none">
+          <CircuitBoard />
+        </motion.div>
       </motion.div>
 
       <motion.div

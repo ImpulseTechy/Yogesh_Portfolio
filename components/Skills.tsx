@@ -87,7 +87,7 @@ export default function Skills() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
-          index="08"
+          index="09"
           label="Skills"
           title="Toolbox"
           subtitle="Hardware, firmware, EDA, VLSI, and curriculum design — the stack behind every product and program."

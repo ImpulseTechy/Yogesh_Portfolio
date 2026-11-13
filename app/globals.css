@@ -219,6 +219,55 @@ h6 {
   animation: scroll-hint 2s ease-in-out infinite;
 }
 
+/* Hero circuit board */
+.pcb-board { fill: rgb(var(--bg-card)); stroke: var(--border); stroke-width: 1.5; }
+.pcb-grid-dot { fill: rgb(var(--accent-teal) / 0.12); }
+.pcb-hole { fill: rgb(var(--bg-primary)); stroke: rgb(212 175 55 / 0.7); stroke-width: 3; }
+.pcb-trace { stroke: rgb(var(--accent-teal) / 0.2); }
+.pcb-pad { fill: rgb(212 175 55 / 0.85); }
+.pcb-metal { fill: #9aa5b4; }
+.pcb-part-dark { fill: #0b1020; stroke: #475569; stroke-width: 1.2; }
+.pcb-resistor { fill: #d9b98e; }
+.pcb-cap { fill: #a16207; }
+.pcb-silk { fill: rgb(var(--text-secondary) / 0.8); font: 600 10px var(--font-jetbrains-mono), monospace; letter-spacing: 0.08em; }
+.pcb-chip { fill: #0b1020; stroke: rgb(var(--accent-teal) / 0.35); stroke-width: 1.5; }
+.pcb-chip-inner { fill: none; stroke: rgb(255 255 255 / 0.06); }
+.pcb-chip-label { fill: #e8edf5; font: 600 20px var(--font-jetbrains-mono), monospace; letter-spacing: 0.04em; }
+.pcb-chip-small { fill: #7a8baa; font: 500 9px var(--font-jetbrains-mono), monospace; letter-spacing: 0.12em; }
+.pcb-pin1 { fill: #4b5563; }
+.pcb-led { fill: #22c55e; animation: pcb-led 2.4s ease-out infinite; }
+.pcb-led-glow { fill: #22c55e; filter: blur(8px); animation: pcb-led-glow 2.4s ease-out infinite; }
+.pcb-chip-glow { fill: rgb(var(--accent-teal) / 0.25); filter: blur(14px); animation: pcb-chip-glow 3s ease-in-out infinite; }
+
+.pcb-flow {
+  stroke: rgb(var(--accent-teal));
+  stroke-dasharray: 12 112;
+  animation: pcb-flow 2s linear infinite backwards;
+}
+.pcb-flow-in { stroke: rgb(var(--accent-blue)); animation-direction: reverse; }
+
+@keyframes pcb-flow {
+  from { stroke-dashoffset: 12; }
+  to { stroke-dashoffset: -112; }
+}
+@keyframes pcb-led {
+  0%, 100% { opacity: 0.25; }
+  4%, 30% { opacity: 1; }
+}
+@keyframes pcb-led-glow {
+  0%, 100% { opacity: 0; }
+  4%, 30% { opacity: 0.8; }
+}
+@keyframes pcb-chip-glow {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcb-flow { animation: none; stroke-dasharray: none; opacity: 0.45; }
+  .pcb-led, .pcb-led-glow, .pcb-chip-glow { animation: none; }
+}
+
 /* Scroll reveal classes */
 .reveal-item {
   opacity: 0;

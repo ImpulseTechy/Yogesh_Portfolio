@@ -92,7 +92,7 @@ export default function Tools() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
-          index="03"
+          index="04"
           label="Tools I've Built"
           title="Software for hardware folks."
           subtitle="Small, focused web tools I built to scratch my own itch while teaching and building hardware."

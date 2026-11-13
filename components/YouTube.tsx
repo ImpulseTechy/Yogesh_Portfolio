@@ -28,7 +28,7 @@ export default function YouTube() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
-          index="07"
+          index="08"
           label="Content"
           title="ImpulseTech"
           subtitle="Engineering education for Indian students — taught in Hinglish, with real component prices and real builds."

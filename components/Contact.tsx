@@ -74,7 +74,7 @@ export default function Contact() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
-          index="09"
+          index="10"
           label="Contact"
           title="Workshops, research, curriculum."
           subtitle="Invite me to run a hands-on hardware workshop, collaborate on CubeSat or education research, or design a robotics curriculum for your institution."

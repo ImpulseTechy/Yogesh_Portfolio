@@ -5,7 +5,7 @@ export const site = {
   resumeUrl: null as string | null,
 
   // e.g. "/images/yogesh.jpg" — a photo of you teaching or at the bench works best
-  profilePhoto: null as string | null,
+  profilePhoto: "/images/yogesh-soldering.jpg" as string | null,
 
   // Split into parts so the full address never appears in the server-rendered HTML.
   emails: [

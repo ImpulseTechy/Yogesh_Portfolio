@@ -70,7 +70,7 @@ export default function Experience() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
-          index="04"
+          index="05"
           label="Experience"
           title="Engineer · Educator · Researcher"
           subtitle="A path through hardware engineering, classroom teaching, curriculum design, and graduate research."

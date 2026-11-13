@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollReveal from "@/components/ScrollReveal";
+import { books } from "@/lib/books";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,6 +63,18 @@ export const metadata: Metadata = {
   },
 };
 
+const booksJsonLd = books.map((b) => ({
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: `${b.title}: ${b.volume}`,
+  alternativeHeadline: b.subtitle,
+  author: { "@type": "Person", name: "Yogesh Bawane", url: "https://yogeshbawane.in" },
+  bookFormat: "https://schema.org/EBook",
+  inLanguage: "en",
+  image: `https://yogeshbawane.in${b.cover}`,
+  url: b.amazonUrl,
+}));
+
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -120,6 +133,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(booksJsonLd) }}
         />
       </head>
       <body>

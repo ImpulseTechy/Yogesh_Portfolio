@@ -44,7 +44,7 @@ export default function Research() {
         className="mx-auto w-full max-w-6xl"
       >
         <SectionHeader
-          index="05"
+          index="06"
           label="Research & Writing"
           title="Papers, articles, and field notes."
           subtitle="Turning workshop data into peer-reviewed research, and sharing builds through trade publications."
