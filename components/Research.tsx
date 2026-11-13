@@ -28,7 +28,7 @@ const publications: Publication[] = [
     venue: "Electronics For You Magazine",
     issue: "January 2024 issue",
     tags: ["IoT", "ESP32", "MPU6050", "Blynk"],
-    href: "https://drive.google.com/file/d/1sf21Eb9wgsRK_3zluIlGOJOO4Lolz_FM/view?usp=sharing",
+    href: "https://www.electronicsforu.com/electronics-projects/fall-detection-system",
   },
 ];
 
